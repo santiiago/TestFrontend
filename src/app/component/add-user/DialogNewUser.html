@@ -1,0 +1,20 @@
+<form (ngSubmit)="save()" name="newuser" novalidate>
+  <h3 mat-dialog-title>Crear Usuario</h3>
+  
+
+    <div class="input-field col s6">
+      <input name="email" id="email" type="text" class="validate" [(ngModel)]="userModel.email" required>
+      <label for="email">Nombre usuario</label>
+    </div>
+
+    <div class="input-field col s6">
+      <input name="password" id="password" type="text" class="validate" [(ngModel)]="userModel.password" required>
+      <label for="password">Contraseña</label>
+    </div>
+  
+
+    <div mat-dialog-actions class="row">
+      <button class="btn btn-sm btn-default col s6" mat-dialog-close>Cerrar</button>
+      <button class="btn btn-sm btn-warning col s6 light-blue lighten-2" type="submit">Guardar</button>
+    </div>
+</form>

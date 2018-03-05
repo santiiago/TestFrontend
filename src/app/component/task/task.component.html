@@ -1,0 +1,37 @@
+<app-add-task></app-add-task>
+<div>
+    <table class='table'>
+        <thead>
+            <th>Nombre tarea</th>
+            <th>Prioridad</th>
+            <th>Fecha expiración</th>
+            <th>Usuario</th>
+            <th>Fecha creación</th>
+            <th>fecha modificación</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody *ngFor="let task of taskModel">
+            <td>{{ task.task_name }}</td>
+            <td>{{ task.task_priority }}</td>
+            <td>{{ task.date_expired }}</td>
+            <td>{{ task.owner.email }}</td>
+            <td>{{ task.createdAt }}</td>
+            <td>{{ task.updatedAt }}</td>
+            <td>
+                <a (click)="showEdit( task )">
+                    <i class="material-icons">mode_edit</i>
+                </a>
+            </td>
+            <td>
+                <a (click)="confirmRemove( task.id )">
+                    <i class="material-icons">delete_forever</i>
+                </a>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+<ng-template noTasks>
+    <h3>no hay tareas registradas</h3>
+</ng-template>

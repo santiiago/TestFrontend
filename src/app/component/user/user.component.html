@@ -1,0 +1,31 @@
+<app-add-user></app-add-user>
+<div>
+    <table class='table'>
+        <thead>
+            <th>Email</th>
+            <th>Fecha creación</th>
+            <th>fecha modificación</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </thead>
+        <tbody *ngFor="let user of userModel">
+            <td>{{ user.email }}</td>
+            <td>{{ user.createdAt }}</td>
+            <td>{{ user.updatedAt }}</td>
+            <td>
+                <a (click)="showEdit( user )">
+                    <i class="material-icons">mode_edit</i>
+                </a>
+            </td>
+            <td>
+                <a (click)="confirmRemove( user.id )">
+                    <i class="material-icons">delete_forever</i>
+                </a>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+<ng-template noUsers>
+    <h3>no hay tareas registradas</h3>
+</ng-template>
